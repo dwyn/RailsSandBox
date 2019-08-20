@@ -24,7 +24,7 @@ p "#{Artist.all.count} Artists created!"
   Song.create!(
     title: Faker::Hipster.word,
     explicit: Faker::Boolean.boolean,
-    artist: Faker::Number.between(1, 20),
+    artist_id: Faker::Number.between(from: 1, to: 20),
   )
 end
 p "#{Song.all.count} Songs created!"
