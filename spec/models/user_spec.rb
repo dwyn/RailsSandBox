@@ -17,12 +17,6 @@ RSpec.describe User, type: :model do
       user = User.new(first_name: 'Daniel', last_name: 'Sala').save
       expect(user).to eq(false)
     end
-
-    # it 'ensures uniqness of email' do
-    #   user1 = User.new(first_name: 'Dwayne', last_name: 'Paz', email: 'email@gmail.com').save
-    #   user2 = User.new(first_name: 'Daniel', last_name: 'Sala', email: 'email@gmail.com').save
-    #   expect(user2).to eq(false)
-    # end
   end
 
   context 'Scope tests' do
