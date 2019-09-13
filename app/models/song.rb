@@ -1,31 +1,22 @@
 class Song < ApplicationRecord
   belongs_to :artist
-
   has_many :song_genres
   has_many :genres, through: :song_genres
+
+
+  
+  # def self.all_the_explicits
+  #   where(explicit: true)
+  # end
+  
+  scope :all_the_explicits, -> { where(explicit: true) }
+
+
+  # def genres_attributes=(attributes)
+  #   attributes.values.each do |genre_attribute|
+  #     genre = Genre.find_or_create_by(genre_attribute) #if !attributes['name'].empty?
+  #     self.genres << genre
+  #   end
+  # end
+
 end
-
-
-# find
-# create_with
-# distinct
-# eager_load
-# extending
-# from
-# group
-# having
-# includes
-# joins
-# left_outer_joins
-# limit
-# lock
-# none
-# offset
-# order
-# preload
-# readonly
-# references
-# reorder
-# reverse_order
-# select
-# where

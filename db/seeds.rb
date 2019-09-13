@@ -17,6 +17,7 @@ Song.destroy_all
   )
 end
 
+
 p "#{Artist.all.count} Artists created!"
 
 

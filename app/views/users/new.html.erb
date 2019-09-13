@@ -1,12 +1,35 @@
-<%= form_for :user do |f| %>
-  <%= f.label :username %>
-  <%= f.text_field :username %>
+ <div class="row" > </div>
+  <div style="  display: block; margin-right: auto; margin-left: auto; width: 45%" >
+    <h4 class="center"> Create User! </h4><br>
 
-  <%= f.label :email %>
-  <%= f.text_field :email %>
+    <%= form_for @user do |f| %>
 
-  <%= f.label :password %>
-  <%= f.text_field :password %>
-  
-  <%= f.submit %>
-<% end %>
+      <div class="form-group">
+        <%= f.label :username %>
+        <%= f.text_field :username, placeholder: "User Name", class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :first_name %>
+        <%= f.text_field :first_name, placeholder: "First Name", class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :last_name %>
+        <%= f.text_field :last_name, placeholder: "Last Name", class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :email %>
+        <%= f.text_field :email, placeholder: "Email", class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :password %>
+        <%= f.text_field :password_digest, placeholder: "Password", class: "form-control" %>
+      </div><br>
+
+      <button type="submit" class="btn btn-md btn-primary btn-block">Create User!</button>
+    <% end %>
+  </h3>
+</div>

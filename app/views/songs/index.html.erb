@@ -1,0 +1,12 @@
+<% @songs.each do |song|%>
+  <%= song.title %><br>
+  <%= song.explicit %><br>
+  <%= song.artist.name %><br><br>
+<% end %>
+
+<h1> These are explicit </h1>
+<% @explicit_songs.each do |song|%>
+  <%= song.title %><br>
+  <%= song.explicit %><br>
+  <%= song.artist.name %><br><br>
+<% end %>

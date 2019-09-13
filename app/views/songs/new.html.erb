@@ -1,0 +1,26 @@
+ <div class="center col-xs-8">
+
+      <%= form_for @song do |f| %>
+        <div class="form-group ">
+          <%= f.label :title %>
+          <%= f.text_field :title, placeholder: "Song Title", class: "form-control"%>
+        </div>
+
+        <div class="form-group">
+          <label for="artist">Select an artist</label>
+          <%= f.collection_select(:artist_id, Artist.all, :id, :name) %>
+        </div>
+          <br>
+          <br>
+          <div class="form-group">
+            <%= f.fields_for :genres do |new_genre| %>
+              <label for="genre">Create a Genre</label>
+              <%= new_genre.label :name%>
+              <%= new_genre.text_field :name, placeholder: "New Genre",  class: "form-control" %>
+            <% end %>
+          </div>
+
+        <button type="submit" class="btn btn-md btn-primary btn-block">Create Song!</button>
+      <% end %>
+
+</div>

@@ -1,40 +1,48 @@
-require 'rails_helper'
+# require 'rails_helper'
 
-RSpec.describe Song, type: :model do
+#   # create_table "songs", force: :cascade do |t|
+#   #   t.string "title"
+#   #   t.boolean "explicit", default: true
+#   #   t.integer "artist_id"
+#   #   t.datetime "created_at", null: false
+#   #   t.datetime "updated_at", null: false
+#   # end
 
-  #!  What part, of what unit are we testing? (Scopes!)
-  context 'Scope tests' do 
+# RSpec.describe Song, type: :model do
 
-    #!  Lets create a few song isntances to use 
-    #!  before each test!
+#   #!  What part, of what unit are we testing? (Scopes!)
+#   context 'Scope tests' do 
 
-    #!  First declare the params hash
-    let!(:song_params) {{ title: Faker::Hipster.word.capitalize, artist_id: Faker::Number.within(range: 1..10)}}
+#     #!  Lets create a few song isntances to use 
+#     #!  before each test!
 
-    #!  Next, lets tell Rspec what to do before each test
-    before(:each) do
-      Song.new(song_params).save
-      Song.new(song_params).save
-      Song.new(song_params.merge({explicit: false})).save
-      Song.new(song_params.merge({explicit: false})).save
-      Song.new(song_params.merge({explicit: false})).save
-    end
+#     #!  First declare the params hash
+#     let!(:song_params) {{ title: Faker::Hipster.word.capitalize, artist_id: Faker::Number.within(range: 1..10)}}
 
-    #!  Scope for  all explicit songs
-    it 'Returns all explicit songs' do
-      binding.pry
-      expect(Song.all_explicit.size).to eq(2)
-    end
+#     #!  Next, lets tell Rspec what to do before each test
+#     #!  In this case, I want to persist some users to play with
+#     before(:each) do
+#       Song.create!(song_params)
+#       Song.create!(song_params)
+#       Song.create!(song_params.merge({explicit: false}))
+#       Song.create!(song_params.merge({explicit: false}))
+#       Song.create!(song_params.merge({explicit: false}))
+#     end
 
-    #!  Scope for  all songs that aren't explicit
-    it 'Returns all not explicit songs' do
-      expect(Song.not_explicit.size).to eq(3)
-    end
+#     #!  Scope for  all explicit songs
+#     it 'Returns all explicit songs' do
+#       expect(Song.all_explicit.size).to eq(2)
+#     end
 
-    #!  Scope for finding all songs belonging to a particular artist?
+#     #!  Scope for  all songs that aren't explicit
+#     it 'Returns all not explicit songs' do
+#       expect(Song.not_explicit.size).to eq(3)
+#     end
+
+#     #!  Scope for finding all songs belonging to a particular artist?
     
-    #!  Scope for finding a song given a certain title?
+#     #!  Scope for finding a song given a certain title?
     
-    #! Scope for finding a list of songs whose title contains the letter T? 
-  end
-end
+#     #! Scope for finding a list of songs whose title contains the letter T? 
+#   end
+# end
