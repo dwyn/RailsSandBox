@@ -1,6 +1,6 @@
- <div class="row" > </div>
-  <div style="  display: block; margin-right: auto; margin-left: auto; width: 45%" >
-    <h4 class="center"> Create User! </h4><br>
+ <div class="row" style="margin-top: 10px;"> </div>
+  <div style="  display: block; margin-right: auto; margin-left: auto; width: 50%" >
+    <h4 class="center"> Sign Up! </h4><br>
 
     <%= form_for @user do |f| %>
 
@@ -26,7 +26,7 @@
 
       <div class="form-group">
         <%= f.label :password %>
-        <%= f.text_field :password_digest, placeholder: "Password", class: "form-control" %>
+        <%= f.text_field :password, placeholder: "Password", class: "form-control" %>
       </div><br>
 
       <button type="submit" class="btn btn-md btn-primary btn-block">Create User!</button>

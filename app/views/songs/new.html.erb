@@ -1,6 +1,7 @@
  <div class="center col-xs-8">
 
-      <%= form_for @song do |f| %>
+      <%= form_for [@artist, @song] do |f| %>
+      
         <div class="form-group ">
           <%= f.label :title %>
           <%= f.text_field :title, placeholder: "Song Title", class: "form-control"%>
@@ -13,10 +14,10 @@
           <br>
           <br>
           <div class="form-group">
-            <%= f.fields_for :genres do |new_genre| %>
-              <label for="genre">Create a Genre</label>
-              <%= new_genre.label :name%>
-              <%= new_genre.text_field :name, placeholder: "New Genre",  class: "form-control" %>
+            <%= f.fields_for :model do |new_model| %>
+              <label for="model">Create a Genre</label>
+              <%= new_model.label :name%>
+              <%= new_model.text_field :title, placeholder: "new model",  class: "form-control" %>
             <% end %>
           </div>
 
