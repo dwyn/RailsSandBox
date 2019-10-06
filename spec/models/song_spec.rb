@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # require 'rails_helper'
 
 #   # create_table "songs", force: :cascade do |t|

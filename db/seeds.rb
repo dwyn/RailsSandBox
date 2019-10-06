@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
@@ -17,7 +19,6 @@ Song.destroy_all
   )
 end
 
-
 p "#{Artist.all.count} Artists created!"
 
 
@@ -25,7 +26,7 @@ p "#{Artist.all.count} Artists created!"
   Song.create!(
     title: Faker::Hipster.word,
     explicit: Faker::Boolean.boolean,
-    artist_id: Faker::Number.between(from: 1, to: 20),
+    artist_id: Faker::Number.between(from: 1, to: 20)
   )
 end
 p "#{Song.all.count} Songs created!"
