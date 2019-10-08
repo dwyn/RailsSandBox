@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
 class UsersController < ApplicationController
+  def index
+    @users = nil
+  end
 
   def show
     # binding.pry
