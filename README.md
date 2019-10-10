@@ -1,3 +1,2 @@
 Practicing with git
-
-Hi Stela
+Here are my changes
