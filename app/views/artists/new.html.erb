@@ -19,15 +19,6 @@
         <%= f.text_field :location, placeholder: "Location", class: "form-control" %>
       </div>
 
-      <div> New Song! </div>
-      <div class="form-group">
-        <%= f.fields_for :songs do |song| %>
-
-          <%= song.label :song_title %>
-          <%= song.text_field :title, placeholder: "Song title", class: "form-control" %>
-        <% end %>
-      </div>
-
       <button type="submit" class="btn btn-md btn-primary btn-block">Create Artist!</button>
     <% end %>
   </h3>
