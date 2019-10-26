@@ -2,6 +2,13 @@
 
 class SongsController < ApplicationController
 
+
+  def index
+    @songs = Song.all
+    @explicit_songs = Song.all_the_explicits
+  end
+
+
   def new
     if params[:artist_id]
       @artist = Artist.find(params[:artist_id])
