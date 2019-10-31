@@ -1,0 +1,12 @@
+<% @artists.each do |artist| %>
+  <div class="card">
+    <div class="card-body">
+
+      <h4> Artist Name:<%= link_to " #{artist.name}", artist_path(artist) %> </h4>  <br>
+      <p style="text-align: justify;"> Bio:  <%= artist.bio %>  </p><br><br> 
+      Location:  <%= artist.location %><br><br>
+
+    </div>
+  </div>
+  <hr style="height:3px;background-color: black;" class="line1"><br>
+<% end %>

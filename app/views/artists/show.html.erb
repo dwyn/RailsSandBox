@@ -1,0 +1,20 @@
+  <div class="card">
+    <div class="card-body">
+
+      <h3> <%= link_to " #{@artist.name}", artist_path(@artist) %> </h3>  <br>
+      <p style="text-align: justify;"> Bio:  <%= @artist.bio %>  </p><br> 
+      Location:  <%= @artist.location %><br><br>
+
+
+      <% if can? :update, @artist %>
+
+        <%= link_to 'Edit Artist', edit_artist_path(@artist), class:"btn btn-primary"%> |
+
+      <% end %>
+
+
+    <% if can? :destroy, @artist %>
+      <%= link_to 'Delete Artist', artist_path(@artist), class:"btn btn-danger", method: :delete%>
+    <% end %>
+    </div>
+  </div>

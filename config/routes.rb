@@ -2,7 +2,74 @@
 
 Rails.application.routes.draw do
 
+  devise_for :users
   root 'welcome#home'
-  resources :songs
+
+  resources :artists, param: :slug do
+    resources :songs
+  end
 
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

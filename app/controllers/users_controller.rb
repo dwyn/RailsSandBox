@@ -6,19 +6,20 @@ class UsersController < ApplicationController
   end
 
   def show
-    # binding.pry
     @user = User.find(params[:id])
   end
 
-  def new
-    @user = User.new
-  end
+  # def new
+  #   @user = User.new
+  # end
 
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to @user
+      redirect_to root_path
+      flash[:success] = "Welcome #{@user.first_name}!"
     else
+      flash.now[:error] = "Nope!"
       render :new
     end
   end

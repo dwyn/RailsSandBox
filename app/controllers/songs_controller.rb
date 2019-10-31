@@ -8,6 +8,9 @@ class SongsController < ApplicationController
     @explicit_songs = Song.all_the_explicits
   end
 
+  def show
+    # binding.pry
+  end
 
   def new
     if params[:artist_id]

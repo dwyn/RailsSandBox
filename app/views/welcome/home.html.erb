@@ -1,1 +1,8 @@
-<h1> Ho-Ho-Hooome!<h1>
+<div class="container">
+
+  <span style="text-align: center;"> <h1> Welcome Home! <h1> </span>
+  <% if @user%>
+  <span style="text-align: center;"> <h1> <%= @user.first_name %> <h1> </span>
+  <% end %>
+
+</div>
