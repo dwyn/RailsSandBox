@@ -13,9 +13,9 @@ class Song < ApplicationRecord
   
   scope :all_the_explicits, -> { where(explicit: true) }
 
-  def self.all_the_explicits
-    where(explicit: true)
-  end
+  # def self.all_the_explicits
+  #   where(explicit: true)
+  # end
 
   # def genres_attributes=(attributes)
   #   attributes.values.each do |genre_attribute|

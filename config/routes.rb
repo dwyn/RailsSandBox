@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :artists, param: :slug do
     resources :songs
   end
-
+  
 end
 
 
