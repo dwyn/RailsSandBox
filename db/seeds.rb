@@ -21,6 +21,7 @@ ActiveRecord::Base.connection.execute("DELETE from sqlite_sequence where name = 
 
 p "#{User.count} Users created!"
 
+
 20.times do
   Artist.create!(
     user_id: Faker::Number.between(from: User.first.id, to: User.last.id),
@@ -29,6 +30,7 @@ p "#{User.count} Users created!"
     location: Faker::Space.planet
   )
 end
+
 p "#{Artist.count} Artists created!"
 
 
@@ -39,4 +41,5 @@ p "#{Artist.count} Artists created!"
     artist_id: Faker::Number.between(from: Artist.first.id, to: Artist.last.id)
   )
 end
+
 p "#{Song.all.count} Songs created!"

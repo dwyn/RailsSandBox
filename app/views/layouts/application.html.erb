@@ -15,19 +15,23 @@
     <!-- NAVBAR! -->
       <nav class="navbar navbar-dark bg-dark" style="border-radius: 25px; margin-top: 20px; margin-bottom: 20px;">
 
-        <%= link_to "Check out Artists!", artists_path, class: "btn btn-primary" %>
+        <%#= link_to "Check out Artists!", artists_path, class: "btn btn-primary" %>
+        <%= link_to "Check out Artists!", root_path, class: "btn btn-primary" %>
 
-        <% if user_signed_in? %>
+        <%# if user_signed_in? %>
         
-          <%= link_to 'Sign Out!🤓', destroy_user_session_path, method: :delete, class:"btn btn-primary", style:"margin-right: 10px; float: right;"  %>
+          <%#= link_to 'Sign Out!🤓', destroy_user_session_path, method: :delete, class:"btn btn-primary", style:"margin-right: 10px; float: right;"  %>
+          <%= link_to 'Sign Out!🤓', root_path, method: :delete, class:"btn btn-primary", style:"margin-right: 10px; float: right;"  %>
 
-        <% else %>
+        <%# else %>
  
-          <%= link_to 'Sign Up!', new_user_registration_path, class:"btn btn-primary", style:"margin-left: 10px; margin-right: 10px; float: right;" %>
+          <%#= link_to 'Sign Up!', new_user_registration_path, class:"btn btn-primary", style:"margin-left: 10px; margin-right: 10px; float: right;" %>
+          <%= link_to 'Sign Up!', root_path, class:"btn btn-primary", style:"margin-left: 10px; margin-right: 10px; float: right;" %>
 
-          <%= link_to 'Sign In!', user_session_path, class:"btn btn-primary", style:"margin-left: 10px; float: right;"%>
+          <%#= link_to 'Sign In!', user_session_path, class:"btn btn-primary", style:"margin-left: 10px; float: right;"%>
+          <%= link_to 'Sign In!', root_path, class:"btn btn-primary", style:"margin-left: 10px; float: right;"%>
         
-        <% end %>
+        <%# end %>
       </nav>
 
       <!-- ALERTS! -->

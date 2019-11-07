@@ -4,8 +4,13 @@ class SongsController < ApplicationController
 
 
   def index
-    @songs = Song.all
-    @explicit_songs = Song.all_the_explicits
+    if params[:artist_id]
+      @songs = Artist.find(params[:artist_id]).songs
+      @explicit_songs = @songs.all_the_explicits
+    else
+      @songs = Song.all
+      @explicit_songs = Song.all_the_explicits
+    end
   end
 
   def show

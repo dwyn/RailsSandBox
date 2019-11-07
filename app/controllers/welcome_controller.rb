@@ -3,7 +3,7 @@
 class WelcomeController < ApplicationController
   
   def home
-  @user = current_user if current_user
+    # @user = current_user if current_user
   
   end
   

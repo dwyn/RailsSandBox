@@ -10,7 +10,7 @@ class Song < ApplicationRecord
   # def self.all_the_explicits
   #   where(explicit: true)
   # end
-  
+
   scope :all_the_explicits, -> { where(explicit: true) }
 
   # def self.all_the_explicits
