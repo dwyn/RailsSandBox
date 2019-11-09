@@ -16,8 +16,14 @@ ActiveRecord::Base.connection.execute("DELETE from sqlite_sequence where name = 
 
 
 
-# User.create!(username: "dwyn", first_name: "Dwayne", last_name: "H.", email: "dwayne@email.com", password: "password" )
-# User.create!(username: "mart.", first_name: "Mart", last_name: "M.", email: "mart@email.com", password: "password" )
+User.create!(
+  username: "dwyn", 
+  first_name: "Dwayne", 
+  last_name: "H.", 
+  email: "dwayne@email.com", 
+  password: "password" 
+)
+User.create!(username: "mart.", first_name: "Mart", last_name: "M.", email: "mart@email.com", password: "password" )
 
 p "#{User.count} Users created!"
 
@@ -41,5 +47,6 @@ p "#{Artist.count} Artists created!"
     artist_id: Faker::Number.between(from: Artist.first.id, to: Artist.last.id)
   )
 end
+
 
 p "#{Song.all.count} Songs created!"
