@@ -11,32 +11,11 @@
 
   <body>
     <div class="container">
+    
+      <%= render 'layouts/navbar'%>
+      <%= render 'layouts/alerts'%>
 
-    <!-- NAVBAR! -->
-      <nav class="navbar navbar-dark bg-dark" style="border-radius: 25px; margin-top: 20px; margin-bottom: 20px;">
-
-        <%= link_to "Check out Artists!", artists_path, class: "btn btn-primary" %>
-
-        <% if user_signed_in? %>
-        
-          <%= link_to 'Sign Out!🤓', destroy_user_session_path, method: :delete, class:"btn btn-primary", style:"margin-right: 10px; float: right;"  %>
-
-        <% else %>
- 
-          <%= link_to 'Sign Up!', new_user_registration_path, class:"btn btn-primary", style:"margin-left: 10px; margin-right: 10px; float: right;" %>
-
-          <%= link_to 'Sign In!', user_session_path, class:"btn btn-primary", style:"margin-left: 10px; float: right;"%>
-        
-        <% end %>
-      </nav>
-
-      <!-- ALERTS! -->
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
-      <%#= render partial: "layouts/alerts" %>
-
-      <%= yield %>
-
+        <%= yield %>
     </div>
   </body>
 </html>

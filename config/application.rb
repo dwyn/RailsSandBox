@@ -31,5 +31,8 @@ module RailsSandBox
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    # Configure 1l8n... Mainly for flash layouts.
+    config.i18n.default_locale = :en
   end
 end

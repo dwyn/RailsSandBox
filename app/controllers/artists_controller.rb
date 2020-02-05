@@ -15,12 +15,13 @@ class ArtistsController < ApplicationController
   def show
     @artist = Artist.find_by_slug(params[:slug])
   end
-
+  
   def edit
     @artist = Artist.find_by_slug(params[:slug])
   end
-
+  
   def create
+    # binding.pry
     @artist = Artist.new(artist_params)
     @artist.user_id = current_user.id
     if @artist.save
@@ -38,7 +39,6 @@ class ArtistsController < ApplicationController
 
   private
   def artist_params
-    params.require(:artist).permit(:name, :bio, :location, :slug)
-    
+    params.require(:artist).permit(:name, :bio, :location, :slug, songs_attributes:[:title, :explicit])
   end
 end

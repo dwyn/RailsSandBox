@@ -4,16 +4,13 @@ class Song < ApplicationRecord
   belongs_to :artist
   has_many :song_genres
   has_many :genres, through: :song_genres
-
+  has_many :reviews, as: :reviewable
 
   
-  # def self.all_the_explicits
-  #   where(explicit: true)
-  # end
+scope :explicit_songs, -> { where(explicit: true) }
+scope :not_explicit_songs, -> { where(explicit: true) }
 
-  scope :all_the_explicits, -> { where(explicit: true) }
-
-  # def self.all_the_explicits
+  # def self.explicit_songs
   #   where(explicit: true)
   # end
 

@@ -2,24 +2,41 @@
   <div style="  display: block; margin-right: auto; margin-left: auto; width: 50%" >
     <h4 class="center"> Create Artist! </h4><br>
 
-    <%= form_for @artist do |f| %>
+    <%= form_for @artist do |artist_info| %>
 
       <div class="form-group">
-        <%= f.label :name %>
-        <%= f.text_field :name, placeholder: "Name", class: "form-control" %>
+        <%= artist_info.label :name %>
+        <%= artist_info.text_field :name, placeholder: "Name", class: "form-control" %>
       </div>
 
       <div class="form-group">
-        <%= f.label :bio %>
-        <%= f.text_field :bio, placeholder: "Bio", class: "form-control" %>
+        <%= artist_info.label :bio %>
+        <%= artist_info.text_field :bio, placeholder: "Bio", class: "form-control" %>
       </div>
 
       <div class="form-group">
-        <%= f.label :location %>
-        <%= f.text_field :location, placeholder: "Location", class: "form-control" %>
+        <%= artist_info.label :location %>
+        <%= artist_info.text_field :location, placeholder: "Location", class: "form-control" %>
       </div>
+
+      <br>
+      <h4>  Add new song? </h4>  
+
+      <%= artist_info.fields_for :songs do |new_song|%>
+      
+        <div class="form-group">
+          <%= new_song.label :title %>
+          <%= new_song.text_field :title %>
+        </div>
+
+        <div class="form-group">
+          <%= new_song.label :explicit? %>
+          <%= new_song.check_box :explicit %>
+        </div>
+
+      <% end %>
 
       <button type="submit" class="btn btn-md btn-primary btn-block">Create Artist!</button>
     <% end %>
-  </h3>
+  </h4>
 </div>

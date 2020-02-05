@@ -6,15 +6,24 @@ class SongsController < ApplicationController
   def index
     if params[:artist_id]
       @songs = Artist.find(params[:artist_id]).songs
-      @explicit_songs = @songs.all_the_explicits
+      @explicit_songs = @songs.explicit_songs
     else
       @songs = Song.all
-      @explicit_songs = Song.all_the_explicits
+      @explicit_songs = Song.explicit_songs
     end
   end
 
+  def explicits
+    @explicit_songs = Song.explicit_songs
+  end
+  
+  def not_explicits
+     @not_explicit_songs = Song.not_explicit_songs
+  end
+
   def show
-    # binding.pry
+    if params[:artist_id]
+    end
   end
 
   def new

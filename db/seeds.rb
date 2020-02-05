@@ -9,12 +9,12 @@
 # User.destroy_all
 Artist.destroy_all
 Song.destroy_all
+User.destroy_all
 
 # ActiveRecord::Base.connection.execute("DELETE from sqlite_sequence where name = 'users'")
-ActiveRecord::Base.connection.execute("DELETE from sqlite_sequence where name = 'artists'")
-ActiveRecord::Base.connection.execute("DELETE from sqlite_sequence where name = 'songs'")
-
-
+# ActiveRecord::Base.connection.execute("DELETE from sqlite_sequence where name = 'artists'")
+# ActiveRecord::Base.connection.execute("DELETE from sqlite_sequence where name = 'songs'")
+# ActiveRecord::Base.connection.execute("DELETE from sqlite_sequence where name = 'users'")
 
 User.create!(
   username: "dwyn", 
@@ -23,7 +23,14 @@ User.create!(
   email: "dwayne@email.com", 
   password: "password" 
 )
-User.create!(username: "mart.", first_name: "Mart", last_name: "M.", email: "mart@email.com", password: "password" )
+
+User.create!(
+  username: "mart.", 
+  first_name: "Mart", 
+  last_name: "M.",
+  email: "mart@email.com",
+  password: "password",
+)
 
 p "#{User.count} Users created!"
 
@@ -50,3 +57,5 @@ end
 
 
 p "#{Song.all.count} Songs created!"
+
+
